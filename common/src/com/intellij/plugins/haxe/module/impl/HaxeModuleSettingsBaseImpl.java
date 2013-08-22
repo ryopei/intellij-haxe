@@ -38,6 +38,7 @@ public class HaxeModuleSettingsBaseImpl implements HaxeModuleSettingsBase {
   protected HaxeTarget haxeTarget = HaxeTarget.NEKO;
   protected NMETarget nmeTarget = NMETarget.FLASH;
   protected OpenFLTarget openFLTarget = OpenFLTarget.FLASH;
+  protected String openFLCompilePath = "";
   protected String hxmlPath = "";
   protected String nmmlPath = "";
   protected String openFLPath = "";
@@ -57,6 +58,7 @@ public class HaxeModuleSettingsBaseImpl implements HaxeModuleSettingsBase {
                                     OpenFLTarget openFLTarget,
                                     String hxmlPath,
                                     String nmmlPath,
+                                    String openFLCompilePath,
                                     String openFLPath,
                                     int buildConfig) {
     this.mainClass = mainClass;
@@ -67,6 +69,7 @@ public class HaxeModuleSettingsBaseImpl implements HaxeModuleSettingsBase {
     this.haxeTarget = haxeTarget;
     this.nmeTarget = nmeTarget;
     this.openFLTarget = openFLTarget;
+    this.openFLCompilePath = openFLCompilePath;
     this.hxmlPath = hxmlPath;
     this.nmmlPath = nmmlPath;
     this.openFLPath = openFLPath;
@@ -158,6 +161,10 @@ public class HaxeModuleSettingsBaseImpl implements HaxeModuleSettingsBase {
     return nmmlPath;
   }
 
+  public String getOpenFLCompilePath() {
+    return openFLCompilePath;
+  }
+
 
   public void setHxmlPath(String hxmlPath) {
     this.hxmlPath = hxmlPath;
@@ -181,6 +188,10 @@ public class HaxeModuleSettingsBaseImpl implements HaxeModuleSettingsBase {
 
   public void setNmmlPath(String nmmlPath) {
     this.nmmlPath = nmmlPath;
+  }
+
+  public void setOpenFLCompilePath(String openFLCompilePath) {
+    this.openFLCompilePath = openFLCompilePath;
   }
 
   public void setBuildConfig(int buildConfig) {

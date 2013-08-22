@@ -60,9 +60,10 @@ public class HaxeModuleSettings extends HaxeModuleSettingsBaseImpl
                             int buildConfig,
                             String hxmlPath,
                             String nmmlPath,
+                            String openFLCompilePath,
                             String openFLPath) {
     super(mainClass, outputFileName, arguments, nmeFlags, excludeFromCompilation, haxeTarget, nmeTarget, openFLTarget, hxmlPath, nmmlPath,
-          openFLPath, buildConfig);
+          openFLCompilePath, openFLPath, buildConfig);
     this.flexSdkName = flexSdkName;
   }
 

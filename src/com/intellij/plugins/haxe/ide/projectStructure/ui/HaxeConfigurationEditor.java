@@ -428,6 +428,8 @@ public class HaxeConfigurationEditor {
     settings.setHxmlPath(FileUtil.toSystemIndependentName(myHxmlFileChooserTextField.getText()));
     settings.setNmmlPath(FileUtil.toSystemIndependentName(myNMEFileChooserTextField.getText()));
 
+    settings.setOpenFLCompilePath(FileUtil.toSystemIndependentName(myModule.getModuleFile().getParent().getPath()));
+
     settings.setBuildConfig(getCurrentBuildConfig());
     for (UnnamedConfigurable configurable : configurables) {
       try {

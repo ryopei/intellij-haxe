@@ -167,7 +167,7 @@ public class HaxeCommonCompilerUtil {
     final BooleanValueHolder hasErrors = new BooleanValueHolder(false);
 
     try {
-      final File workingDirectory = new File(FileUtil.toSystemDependentName(workingPath));
+      final File workingDirectory = new File(FileUtil.toSystemDependentName(settings.getOpenFLCompilePath()));
       if (!workingDirectory.exists()) {
         workingDirectory.mkdir();
       }
