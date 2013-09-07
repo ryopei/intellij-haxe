@@ -300,6 +300,11 @@
   </extensions>
 
   <actions>
+    <group id="com.intellij.plugins.haxe.config.OpenFLConfig" text="OpenFLConfig" description="OpenFL Configuration UI">
+      <add-to-group group-id="MainToolBar" anchor="last"  />
+      <action id="Haxe.OpenFLPopup" class="com.intellij.plugins.haxe.config.OpenFLConfig" text="OpenFL Target" description="Change OpenFL Target" />
+    </group>
+
     <action id="Haxe.NewHaxeClass" class="com.intellij.plugins.haxe.ide.actions.CreateClassAction"
             text="Haxe Class" description="Create new Haxe class/interface/enum">
       <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
