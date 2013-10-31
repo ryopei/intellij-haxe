@@ -258,9 +258,9 @@
     <moduleService serviceInterface="com.intellij.plugins.haxe.ide.module.HaxeModuleSettings"
                    serviceImplementation="com.intellij.plugins.haxe.ide.module.HaxeModuleSettings"/>
 
-    <internalFileTemplate name="Haxe Class"/>
-    <internalFileTemplate name="Haxe Interface"/>
-    <internalFileTemplate name="Haxe Enum"/>
+    <internalFileTemplate name="haXe Class"/>
+    <internalFileTemplate name="haXe Interface"/>
+    <internalFileTemplate name="haXe Enum"/>
     <internalFileTemplate name="NMML Project File"/>
 
     <liveTemplateMacro implementation="com.intellij.plugins.haxe.ide.template.macro.HaxeArrayVariableMacro"/>
