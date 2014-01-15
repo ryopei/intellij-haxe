@@ -19,7 +19,7 @@
     <xs:element name="project" type="projectType"/>
     <xs:complexType name="projectType">
         <xs:choice>
-            <xs:element type="appType" name="meta"/>
+            <xs:element type="metaType" name="meta"/>
             <xs:element type="appType" name="app"/>
             <xs:element type="windowType" name="window"/>
             <xs:element type="setType" name="set"/>
@@ -43,23 +43,33 @@
             <xs:element type="pathType" name="library"/>
             <xs:element type="pathType" name="java"/>
             <xs:element type="certificateType" name="certificate"/>
+            <xs:element type="iosType" name="certificate"/>
             <xs:element type="nameType" name="dependency"/>
             <xs:element type="valueType" name="error"/>
         </xs:choice>
         <xs:attribute type="xs:string" name="if"/>
         <xs:attribute type="xs:string" name="unless"/>
     </xs:complexType>
-    <xs:complexType name="appType">
+    <xs:complexType name="metaType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
                 <xs:attribute type="xs:string" name="title"/>
-                <xs:attribute type="xs:string" name="main"/>
-                <xs:attribute type="xs:string" name="file"/>
+                <xs:attribute type="xs:string" name="description"/>
                 <xs:attribute type="xs:string" name="package"/>
-                <xs:attribute type="xs:string" name="path"/>
-                <xs:attribute type="xs:string" name="preloader"/>
                 <xs:attribute type="xs:string" name="version"/>
                 <xs:attribute type="xs:string" name="company"/>
+                <xs:attribute type="xs:string" name="if"/>
+                <xs:attribute type="xs:string" name="unless"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+  <xs:complexType name="appType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="main"/>
+                <xs:attribute type="xs:string" name="file"/>
+                <xs:attribute type="xs:string" name="path"/>
+                <xs:attribute type="xs:string" name="preloader"/>
                 <xs:attribute type="xs:byte" name="swf-version"/>
                 <xs:attribute type="xs:string" name="if"/>
                 <xs:attribute type="xs:string" name="unless"/>
@@ -175,6 +185,33 @@
                 <xs:attribute type="xs:short" name="alias-password"/>
                 <xs:attribute type="xs:string" name="if"/>
                 <xs:attribute type="xs:string" name="unless"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+  <xs:complexType name="iosType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="deployment"/>
+                <xs:attribute type="xs:string" name="if"/>
+                <xs:attribute type="xs:string" name="unless"/>
+                <xs:attribute name="binaries">
+                    <xs:simpleType>
+                        <xs:restriction>
+                            <xs:enumeration value="armv6"/>
+                            <xs:enumeration value="armv7"/>
+                            <xs:enumeration value="fat"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="devices">
+                    <xs:simpleType>
+                        <xs:restriction>
+                            <xs:enumeration value="ipad"/>
+                            <xs:enumeration value="iphone"/>
+                            <xs:enumeration value="universal"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
