@@ -198,6 +198,8 @@ IDENTIFIER_NO_DOLLAR={IDENTIFIER_START_NO_DOLLAR}{IDENTIFIER_PART_NO_DOLLAR}*
 "never"                                   {  return KNEVER;  }
 "override"                                {  return KOVERRIDE;  }
 "inline"                                  {  return KINLINE;  }
+"get"                                     {  return KGET;  }
+"set"                                     {  return KSET;  }
 
 "untyped"                                 {  return KUNTYPED;  }
 "typedef"                                 {  return KTYPEDEF;  }
@@ -207,7 +209,7 @@ IDENTIFIER_NO_DOLLAR={IDENTIFIER_START_NO_DOLLAR}{IDENTIFIER_PART_NO_DOLLAR}*
 "@:final"                                 {  return KFINAL;  }
 "@:hack"                                  {  return KHACK;  }
 "@:native"                                {  return KNATIVE;  }
-"@:macro"                                 {  return KMACRO;  }
+"macro"                                   {  return KMACRO;  }
 "@:build"                                 {  return KBUILD;  }
 "@:autoBuild"                             {  return KAUTOBUILD;  }
 "@:keep"                                  {  return KKEEP;  }
