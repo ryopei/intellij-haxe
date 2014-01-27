@@ -17,17 +17,18 @@
 // This is a generated file. Not intended for manual editing.
 package com.intellij.plugins.haxe.lang.parser;
 
-import org.jetbrains.annotations.*;
+import com.intellij.lang.ASTNode;
 import com.intellij.lang.LighterASTNode;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiBuilder.Marker;
-import com.intellij.openapi.diagnostic.Logger;
-import static com.intellij.plugins.haxe.lang.lexer.HaxeTokenTypes.*;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.*;
-import com.intellij.psi.tree.IElementType;
-import com.intellij.lang.ASTNode;
-import com.intellij.psi.tree.TokenSet;
 import com.intellij.lang.PsiParser;
+import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.psi.tree.IElementType;
+import com.intellij.psi.tree.TokenSet;
+import org.jetbrains.annotations.NotNull;
+
+import static com.intellij.lang.parser.GeneratedParserUtilBase.*;
+import static com.intellij.plugins.haxe.lang.lexer.HaxeTokenTypes.*;
 
 @SuppressWarnings({"SimplifiableIfStatement", "UnusedAssignment"})
 public class HaxeParser implements PsiParser {
@@ -5315,6 +5316,7 @@ public class HaxeParser implements PsiParser {
     if (!recursion_guard_(builder_, level_, "propertyAccessor")) return false;
     if (!nextTokenIs(builder_, KDEFAULT) && !nextTokenIs(builder_, KDYNAMIC)
         && !nextTokenIs(builder_, KNEVER) && !nextTokenIs(builder_, KNULL)
+        && !nextTokenIs(builder_, KSET) && !nextTokenIs(builder_, KGET)
         && !nextTokenIs(builder_, ID) && replaceVariants(builder_, 5, "<property accessor>")) return false;
     boolean result_ = false;
     Marker marker_ = builder_.mark();
@@ -5324,6 +5326,8 @@ public class HaxeParser implements PsiParser {
     if (!result_) result_ = consumeToken(builder_, KDEFAULT);
     if (!result_) result_ = consumeToken(builder_, KDYNAMIC);
     if (!result_) result_ = consumeToken(builder_, KNEVER);
+    if (!result_) result_ = consumeToken(builder_, KGET);
+    if (!result_) result_ = consumeToken(builder_, KSET);
     if (result_) {
       marker_.done(PROPERTY_ACCESSOR);
     }

@@ -173,6 +173,7 @@ public interface HaxeTokenTypes {
   IElementType KFROM = new HaxeElementType("from");
   IElementType KFUNCTION = new HaxeElementType("function");
   IElementType KGETTER = new HaxeElementType("@:getter");
+  IElementType KGET = new HaxeElementType("get");
   IElementType KHACK = new HaxeElementType("@:hack");
   IElementType KIF = new HaxeElementType("if");
   IElementType KIMPLEMENTS = new HaxeElementType("implements");
@@ -196,6 +197,7 @@ public interface HaxeTokenTypes {
   IElementType KREQUIRE = new HaxeElementType("@:require");
   IElementType KRETURN = new HaxeElementType("return");
   IElementType KSETTER = new HaxeElementType("@:setter");
+  IElementType KSET = new HaxeElementType("set");
   IElementType KSTATIC = new HaxeElementType("static");
   IElementType KSUPER = new HaxeElementType("super");
   IElementType KSWITCH = new HaxeElementType("switch");
