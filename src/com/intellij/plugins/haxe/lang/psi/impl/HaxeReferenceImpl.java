@@ -27,6 +27,7 @@ import com.intellij.plugins.haxe.util.HaxeElementGenerator;
 import com.intellij.plugins.haxe.util.HaxeResolveUtil;
 import com.intellij.plugins.haxe.util.UsefulPsiTreeUtil;
 import com.intellij.psi.*;
+import com.intellij.psi.impl.PsiSubstitutorImpl;
 import com.intellij.psi.impl.source.resolve.ResolveCache;
 import com.intellij.psi.impl.source.tree.LeafPsiElement;
 import com.intellij.psi.infos.CandidateInfo;
@@ -214,7 +215,7 @@ public abstract class HaxeReferenceImpl extends HaxeExpressionImpl implements Ha
   private static ResolveResult[] toCandidateInfoArray(List<? extends PsiElement> elements) {
     final ResolveResult[] result = new ResolveResult[elements.size()];
     for (int i = 0, size = elements.size(); i < size; i++) {
-      result[i] = new CandidateInfo(elements.get(i), null);
+      result[i] = new CandidateInfo(elements.get(i), PsiSubstitutorImpl.createSubstitutor(null));
     }
     return result;
   }
