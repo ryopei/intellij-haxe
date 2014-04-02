@@ -1,3 +1,6 @@
+↑のhaxe.zipをダウンロードしてIDEAからInstall plugin from diskすればOK
+
+
 Steps to configure a plugin SDK:
 
 * Open Module Settings
